@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 fs.readFile(myFile, {"encoding": "utf8"}, function(err, data) {
   if (err && err.code === "ENOENT") {
-    contents = null;
+    contents = '';
   } else if (err) {
     console.log(err);
   } else {

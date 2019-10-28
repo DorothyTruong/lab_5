@@ -8,7 +8,10 @@ window.onload = function() {
   }
 }
 
-var retrievedData = JSON.parse(document.querySelector('#storedData').textContent);
+
+if (document.querySelector('#storedData').textContent != '') {
+  var retrievedData = JSON.parse(document.querySelector('#storedData').textContent);
+}
 
 
 function populate(artistName, aboutArtist, artistURL){
