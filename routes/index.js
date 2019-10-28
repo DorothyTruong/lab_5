@@ -10,9 +10,11 @@ router.get('/', function(req, res, next) {
 });
 
 fs.readFile(myFile, {"encoding": "utf8"}, function(err, data) {
-  if (err)
+  if (err && err.code === "ENOENT") {
+    contents = null;
+  } else if (err) {
     console.log(err);
-  else {
+  } else {
     contents = data;
   }
  });

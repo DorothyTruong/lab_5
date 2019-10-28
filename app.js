@@ -57,9 +57,7 @@ app.post('/', function(req, res) {
       }
     }
   });
-
-  res.redirect('/');
-  res.end();
+  setTimeout(res.redirect('/'), 300);
 });
 
 

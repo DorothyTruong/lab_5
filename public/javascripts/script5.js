@@ -1,17 +1,14 @@
-
-var retrievedData = JSON.parse(document.querySelector('#storedData').textContent);
-
-
 window.onload = function() {
   document.getElementById("add-form").style.display = 'none'; //hides the form
   var storedUsers =retrieveUsers();
 
   for (var i = 0; i < storedUsers.length; i++) {
-    //console.log(storedUsers[i]);
     let user = storedUsers[i];
     populate(user.user, user.aboutUser, user.userURL);
   }
 }
+
+var retrievedData = JSON.parse(document.querySelector('#storedData').textContent);
 
 
 function populate(artistName, aboutArtist, artistURL){
@@ -114,7 +111,6 @@ function retrieveUsers(){
   if (!userList) {
     userList = [];
   }
-  //console.log(userList);
   return userList; 
 }
 
