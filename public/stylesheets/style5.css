@@ -1,0 +1,117 @@
+body {
+    background-color: white;
+  }
+  
+  #AD {
+    font-family: 'Noto Sans JP', sans-serif;
+    border-style: solid;
+    border-width: thin;
+    border-color: gray;
+    color: black;
+    width: 62.5%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  #title {
+    text-align:left;
+    margin-top: -10px;
+    margin-left: 5%;
+  }
+
+  .search-form {
+    margin: 0 1rem;  
+    flex-grow: 1; 
+    min-width: 5rem;
+    display: flex;
+  }
+
+  .search-box {
+    width: 95%;  
+    padding: .4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .search-form button {
+    font-family: 'Noto Sans JP', sans-serif;
+    display: block;
+    height: 32px;
+    background: lightgrey;
+    border: solid 1px transparent;
+    border-radius: 4px;
+    margin-left: 5px;
+    min-width: 80px;
+  }
+
+  #add-user-div {
+    text-align: center;
+  }
+
+  .input-field {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 300px;
+  }
+
+  #add-user-button{
+    font-family: 'Noto Sans JP', sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width:100px;
+    height: 30px;
+    background: lightgray;
+    border: solid 1px transparent;
+    border-radius: 4px;
+  }
+
+  .container {   
+    align-items:center;
+    justify-content:center;
+    font-family: 'Roboto', sans-serif;
+    border-style: solid;
+    border-width:thin;
+    border-color: grey;
+    display: flex;
+    flex-wrap: wrap;
+    text-align:center;
+    width: 52%;
+    margin: 0 auto;
+  }
+
+  .container:hover {
+    background-color: orchid;
+    opacity: 0.5;
+  }
+
+  img {
+    margin-right: 13px;
+    margin-left:13px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 70px;
+    width:70px;
+  }
+
+  .info {
+    text-align: left;
+    font-size:12px;
+    min-width: 200px;
+    margin-right:8px;
+  }
+
+  .delete-button{
+    font-family: 'Roboto', sans-serif;
+    background: rgba(255, 8, 0, 0.884);
+    height: 32px;
+    margin-top: 30px;
+    border: solid 1px transparent;
+    border-radius: 4px;
+    margin-left: auto;
+    color: white;
+    margin-right: 13px;
+    margin-bottom: 27px;
+  }

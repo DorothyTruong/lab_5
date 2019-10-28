@@ -1,0 +1,38 @@
+<div id="AD">
+  <div  id="title">
+      <h1>
+          Artist Directory
+      </h1>
+  </div>
+
+  <form class="search-form">
+      <input type="text" id="searchInput" class="search-box">
+      <button type="button" onclick="myFunction()">Add artist</button>
+      <button type="button" onclick="searchUsers()">Search</button>
+  </form>
+</div>
+
+
+<div id="add-user-div">
+  <form id="add-form" method="POST">
+    <div class="input-container">
+      <input class="input-field" name="user" id="username" type="text" placeholder="Artist Name" maxlength="40">
+    </div>
+  
+    <div class="input-container">
+      <input class="input-field" name="aboutUser" id="about" type="text" placeholder="About artist" maxlength="40">
+    </div>
+  
+    <div class="input-container">
+      <input class="input-field" name="userUrl" id="url" type="text" placeholder="Image url">
+    </div>
+  
+    {{!-- <button type="button" id="add-user-button" class="btn" onclick="myInput();">Add</button> --}}
+    <button type="submit" id="add-user-button" class="btn">Add</button>
+  </form>
+</div>
+
+
+<div id="all-artists">
+</div>
+
