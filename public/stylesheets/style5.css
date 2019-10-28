@@ -115,3 +115,7 @@ body {
     margin-right: 13px;
     margin-bottom: 27px;
   }
+
+  #storedData {
+    display: none;
+  }

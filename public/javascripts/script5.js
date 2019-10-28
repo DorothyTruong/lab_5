@@ -1,11 +1,15 @@
 
+var retrievedData = JSON.parse(document.querySelector('#storedData').textContent);
+
+
 window.onload = function() {
   document.getElementById("add-form").style.display = 'none'; //hides the form
-  var storedUsers = Array.from(retrieveUsers());
+  var storedUsers =retrieveUsers();
 
   for (var i = 0; i < storedUsers.length; i++) {
+    //console.log(storedUsers[i]);
     let user = storedUsers[i];
-    populate(user.userName, user.userDesc, user.userURL);
+    populate(user.user, user.aboutUser, user.userURL);
   }
 }
 
@@ -76,51 +80,52 @@ function removeArtist(){
     var art = this.parentNode;
 
     const deadArt = {
-      userName: art.getElementsByTagName('h2')[0].innerHTML,
-      userDesc: art.getElementsByTagName('p')[1].innerHTML
+      user: art.getElementsByTagName('h2')[0].innerHTML,
+      aboutUser: art.getElementsByTagName('p')[1].innerHTML
     }
 
-    var currentList = Array.from(retrieveUsers());
-    currentList = currentList.filter(currentList => currentList.userName !== deadArt.userName 
-                                    && currentList.userDesc !== deadArt.userDesc);
+    var currentList = retrieveUsers();
+    currentList = currentList.filter(currentList => currentList.user !== deadArt.user 
+                                    && currentList.aboutUser !== deadArt.aboutUser);
     
     art.parentNode.removeChild(art);
     localStorage.setItem('user', JSON.stringify(currentList));
 }
 
 
-function storeUser(){
-  var input = document.querySelector("#add-form");
+// function storeUser(){
+//   var input = document.querySelector("#add-form");
 
-  const user = {                                    //creates a new user with input of fields
-    userName : input.elements[0].value,
-    userDesc : input.elements[1].value,
-    userURL : input.elements[2].value
-  }          
+//   const user = {                                    //creates a new user with input of fields
+//     userName : input.elements[0].value,
+//     userDesc : input.elements[1].value,
+//     userURL : input.elements[2].value
+//   }          
   
-  let userList = retrieveUsers();
-  userList.push(user);
-  localStorage.setItem('user', JSON.stringify(userList));   //setting the new array object in local storage
-}
+//   let userList = retrieveUsers();
+//   userList.push(user);
+//   localStorage.setItem('user', JSON.stringify(userList));   //setting the new array object in local storage
+// }
 
 
 /* Retrieves data from local storage JSON */
 function retrieveUsers(){
-  let userList = JSON.parse(localStorage.getItem('user'));
+  let userList = retrievedData;
   if (!userList) {
     userList = [];
   }
+  //console.log(userList);
   return userList; 
 }
 
 
 function searchUsers(){
-  var currentList = Array.from(retrieveUsers());
+  var currentList = retrieveUsers();
   var input = document.getElementById("searchInput");
   var filterList = [];
 
   for(i = 0; i < currentList.length; i++){
-    if(((currentList[i].userName).toLowerCase()).includes((input.value).toLowerCase())){
+    if(((currentList[i].user).toLowerCase()).includes((input.value).toLowerCase())){
       filterList.push(currentList[i]);
     } else {}
   }
@@ -132,7 +137,7 @@ function searchUsers(){
   }
   
   for(i = 0; i < filterList.length; i ++){
-    populate(filterList[i].userName, filterList[i].userDesc, filterList[i].userURL);
+    populate(filterList[i].user, filterList[i].aboutUser, filterList[i].userURL);
   }
 }
 
